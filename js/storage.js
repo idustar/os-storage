@@ -17,7 +17,7 @@ class Storage {
 
     // 随机生成请求序列
     buildQueue() {
-        // 每个id分别添加两次。第一次为被分配，第二次为被释放。
+        // 每个id分别添加两次。第一次为被分配，第二次为被回收。
         for (let i = 0; i < g.blocksCount; i++) {
             this.queue.push(i, i)
         }
@@ -68,10 +68,10 @@ class Storage {
         while (offset < this.queue.length) {
             let now = this.queue[offset] // 当前处理的进程id
             if (this.isAllocated[now]) {
-                // 释放
+                // 回收
                 this.removeFromOrders(now)
                 this.isAllocated[now] = false
-                sendMessage('进程 ' + now + ' ( ' + g.blocks[now] + ' KB ) 已被释放。', "fa fa-unlock", g.color[now % 20])
+                sendMessage('进程 ' + now + ' ( ' + g.blocks[now] + ' KB ) 已被回收。', "fa fa-unlock", g.color[now % 20])
                 this.remain += g.blocks[now]
                 this.refreshUI(false, {
                     id: now
@@ -197,7 +197,7 @@ class Storage {
             father.append(block)
             $('#storage-block-' + attr.id).slideDown(1000)
         } else
-        // 释放内存块动画
+        // 回收内存块动画
             $('#storage-block-' + attr.id).slideUp(1000, () => {
                 $("#storage-block-" + attr.id).remove();
             })
