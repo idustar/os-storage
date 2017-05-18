@@ -175,14 +175,14 @@ class Storage {
     // 刷新视图
     refreshUI(add = true, attr) {
         // 刷新实时面板
-        $('#all').fadeOut(300, () => {
+        $('#all').fadeOut(200, () => {
             $('#all').text(this.remain)
         })
-        $('#all').fadeIn(300)
-        $('#remain').fadeOut(300, () => {
+        $('#all').fadeIn(200)
+        $('#remain').fadeOut(200, () => {
             $('#remain').text(this.queue.length)
         })
-        $('#remain').fadeIn(300)
+        $('#remain').fadeIn(200)
         if (add) {
             // 分配内存块动画
             let father = $('#storage')
