@@ -1,0 +1,108 @@
+html,body {
+    font-family:"PingFang SC","Microsoft YaHei";
+    height:95%;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    -khtml-user-select:none;
+    user-select:none;
+    cursor:default;
+}
+.container {
+    margin:10px;
+    padding-bottom:10px;
+    height:100%;
+}
+@media screen and (min-width:1020px) {
+    .container {
+        margin-left:20%;
+        margin-right:20%;
+    }
+}
+@media screen and (min-width:800px) and (max-width:1020px) {
+    .container {
+        margin-left:10%;
+        margin-right:10%;
+    }
+}
+@media screen and (max-width:800px) {
+    .container {
+        margin-left:0%;
+        margin-right:0%;
+    }
+}.left-panel {
+     float:left;
+     width:160px;
+ }
+.center-panel {
+    float:left;
+    width:200px;
+    height:100%;
+}
+.right-panel {
+    padding-left:20px;
+    overflow:hidden;
+    overflow-y:scroll;
+    height:100%;
+    max-height:100%;
+    font-size:12px;
+}
+#setting-panel {
+    font-size:12px;
+    position:absolute;
+    bottom:8%;
+}
+#work-panel {
+    display:none;
+    width:160px;
+    position:absolute;
+    bottom:8%;
+    text-align:center;
+}
+#all-label {
+    font-size:20px;
+    color:blue;
+}
+#all {
+    color:brown;
+}
+#remain {
+    margin:-15px;
+    font-size:60px;
+    font-weight:bold;
+    color:orangered;
+}
+#remain-label {
+    font-size:20px;
+    color:blueviolet;
+}
+#storage {
+    background:#e2e3e6;
+    border-left:5px blueviolet solid;
+    width:200px;
+    height:100%;
+}
+.storage-block {
+    background:#d0dce9;
+    width:200px;
+    position:fixed;
+}
+button {
+    width:150px;
+}
+.message-icon {
+    font-size:18px;
+    display:inline-block;
+    width:20px;
+    margin-left:-20px;
+}
+#message-panel {
+    line-height:18px;
+    padding-left:20px;
+    text-indent:0px;
+    text-shadow:1px 1px 1px rgba(0,0,0,0.31);
+}
+#message-header {
+    font-size:14px;
+    padding-bottom:10px;
+}

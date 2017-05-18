@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>内存管理</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+<div class="container">
+    <div class="left-panel">
+        <div>
+            <button class='btn-do' id='btn-hand-f' disabled onclick="g.st.nextTick()">单步:首先适应算法</button>
+        </div>
+        <div>
+            <button class='btn-do' id='btn-hand-b' disabled onclick="g.st.nextTick(false)">单步:最佳适应算法</button>
+        </div>
+        <div>
+            <button class='btn-do' id='btn-auto-f' disabled onclick="g.st.autoRun()">自动:首先适应算法</button>
+        </div>
+        <div>
+            <button class='btn-do' id='btn-auto-b' disabled onclick="g.st.autoRun(false)">自动:最佳适应算法</button>
+        </div>
+        <div>
+            <button id='btn-stop' onclick="g.st.stopAutoRun()" style="display: none">暂停 | 自动模式中...</button>
+        </div>
+        <div id="work-panel">
+            <div id="remain-label">REMAIN</div>
+            <div id="remain"></div>
+            <div id="all-label">FREE: <span id="all"></span> KB</div>
+        </div>
+        <div id="setting-panel">
+            <div>进程数:
+                <input type="number" id="processCount" min="5" max="100" value="30" />个</div>
+            <div>内存容量:
+                <input type="number" id="capacity" min="300" max="1200" value="640" />KB</div>
+            <div>最大进程容量:
+                <input type="number" id="maxProcess" min="100" max="600" value="320" />KB</div>
+            <button onclick="init()">确认设置，开始运行</button>
+        </div>
+    </div>
+    <div class="center-panel">
+        <div id="storage"></div>
+    </div>
+    <div class="right-panel">
+        <div id="message" class="message">
+            <div id="message-header">消息窗口</div>
+            <div id="message-panel"></div>
+            <div id="message-footer"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>
