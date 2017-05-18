@@ -4,7 +4,7 @@
  * Storage类
  */
 class Storage {
-    constructor(firstFit) {
+    constructor() {
         this.capacity = g.capacity // 内存容量
         this.queue = [] // 请求序列
         this.isAllocated = Array(10).fill(false) // 是否被分配，默认值false
@@ -180,7 +180,7 @@ class Storage {
         })
         $('#all').fadeIn(300)
         $('#remain').fadeOut(300, () => {
-            $('#remain').text(this.queue.length - 1)
+            $('#remain').text(this.queue.length)
         })
         $('#remain').fadeIn(300)
         if (add) {
